@@ -1,0 +1,32 @@
+{% extends 'components/default.html' %}
+
+
+{% block body %}
+
+{% include 'components/navbar.html' %}
+
+<div id="surface" class="surface">
+
+	<div id="javascript-disabled" class="alert alert-danger">
+
+		<h4 class="alert-heading">
+			<span>You need javascript</span>
+		</h4>
+
+		<p>this application will need javascript
+			enabled for this page to work entirely,
+			sorry for the inconvenience.</p>
+
+	</div>
+
+</div>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+<script src="https://cjrtnc.leaningtech.com/1.4/loader.js"></script>
+<script src="/app/main/static/js/index.js"></script>
+
+{% endblock %}

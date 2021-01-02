@@ -1,0 +1,45 @@
+{% block navbar %}
+
+<section class="navbar navbar-expand navbar-fixed-top
+border-bottom">
+
+	<a class="navbar-brand" href="/home">
+
+		<img src="/app/main/static/images/matlab.png" alt="matlab icon">
+
+	</a>
+
+	<div class="container justify-content-end">
+
+		<a class="nav-item nav-link sc-jflapweb
+		text-dark" href="/about">
+
+			<i class="fas fa-search"></i>
+
+			<span>About</span>
+
+		</a>
+
+		<a class="nav-item nav-link sc-jflapweb
+		text-dark" href="https://git.sr.ht/~drnyanpassu/jflapweb">
+
+			<i class="fab fa-github"></i>
+
+			<span>Project</span>
+
+		</a>
+
+		<a class="nav-item nav-link sc-jflapweb
+		text-dark" href="https://git.sr.ht/~drnyanpassu/jflapweb/refs/{{ config.VERSION }}">
+
+			<i class="fas fa-tags"></i>
+
+			<span>{{ config.VERSION }}</span>
+
+		</a>
+
+	</div>
+
+</section>
+
+{% endblock %}

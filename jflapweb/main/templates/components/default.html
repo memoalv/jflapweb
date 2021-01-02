@@ -1,0 +1,16 @@
+{% extends 'components/base.html' %}
+
+
+{% block body %}
+
+{% include 'components/navbar.html' %}
+
+<div class="container px-0 bg-light">
+
+	{% block content %}{% endblock %}
+
+</div>
+
+{% include 'components/footbar.html' %}
+
+{% endblock %}

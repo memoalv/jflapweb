@@ -1,0 +1,67 @@
+{% extends 'components/default.html' %}
+
+
+{% block content %}
+
+<div class="container justify-content-center alert alert-secondary">
+
+	<h2 class="display-3 text-center">
+		ERROR
+		<span>
+			{% if error and error.code %}
+			{{ error.code | safe }}
+			{% endif %}
+		</span>
+	</h2>
+
+	<hr>
+
+	<div class="row px-0 py-2 align-items-center">
+
+		<div class="container col-4">
+
+			<img class="img-fluid" src="/app/main/static/images/icon.png" alt="error image">
+
+		</div>
+
+		<div class="container col">
+
+			<h2 class="text-justify">
+
+				{% if error and error.description %}
+				{{ error.description | safe }}
+				{% endif %}
+
+			</h2>
+
+		</div>
+
+
+	</div>
+
+	<div class="container row py-2 justify-content-center no-gutters">
+
+		<h4 class="text-center text-muted">~
+			Sorry for all the inconveniences!</h4>
+
+	</div>
+
+	<hr>
+
+	<div class="container row justify-content-center no-gutters">
+
+		<div class="btn-group">
+
+			<a class="btn
+			btn-outline-danger" href="#">Reload the page</a>
+
+			<a class="btn
+			btn-outline-danger" href="/home">Take me back</a>
+
+		</div>
+
+	</div>
+
+</div>
+
+{% endblock %}
