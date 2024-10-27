@@ -12,9 +12,11 @@ JFLap is a Java application for creating and visualizing various computational m
 ## INSTALLATION
 
 1. Install [Docker](https://www.docker.com/)
-2. Build the container image `docker build -t jflapweb .`
-3. Run the image `docker run --rm -it -p 3000:5000 --name jflapweb-container jflapweb`
-4. The application will now be live at <http:localhost:3000>
+2. Clone the repository
+3. Navigate to the project's root
+4. Build the container image `docker build -t jflapweb .`
+5. Run the image `docker run --rm -it -p 3000:5000 --name jflapweb-container jflapweb`
+6. The application will now be live at <http:localhost:3000>
 
 #### LIVE EXAMPLES
 
