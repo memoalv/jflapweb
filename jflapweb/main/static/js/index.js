@@ -1,98 +1,14 @@
-// cheerpj preloaders, this will prevent the automatic
-// search of the dependencies, it will be more optimal to
-// skip it.
+// // Init the cheerpj system.
+;(async function () {
+  await cheerpjInit()
 
-preloaders = [
-	'/lt/runtime/rt.jar.com.js',
-	'/lt/runtime/rt.jar.com.sun.java.js',
-	'/lt/runtime/rt.jar.com.sun.js',
-	'/lt/runtime/rt.jar.com.sun.swing.js',
-	'/lt/runtime/rt.jar.java.awt.color.js',
-	'/lt/runtime/rt.jar.java.awt.datatransfer.js',
-	'/lt/runtime/rt.jar.java.awt.dnd.js',
-	'/lt/runtime/rt.jar.java.awt.event.js',
-	'/lt/runtime/rt.jar.java.awt.font.js',
-	'/lt/runtime/rt.jar.java.awt.geom.js',
-	'/lt/runtime/rt.jar.java.awt.im.js',
-	'/lt/runtime/rt.jar.java.awt.image.js',
-	'/lt/runtime/rt.jar.java.awt.js',
-	'/lt/runtime/rt.jar.java.awt.peer.js',
-	'/lt/runtime/rt.jar.java.beans.js',
-	'/lt/runtime/rt.jar.java.io.js',
-	'/lt/runtime/rt.jar.java.js',
-	'/lt/runtime/rt.jar.java.lang.invoke.js',
-	'/lt/runtime/rt.jar.java.lang.js',
-	'/lt/runtime/rt.jar.java.net.js',
-	'/lt/runtime/rt.jar.java.nio.file.js',
-	'/lt/runtime/rt.jar.java.nio.js',
-	'/lt/runtime/rt.jar.java.security.js',
-	'/lt/runtime/rt.jar.java.text.js',
-	'/lt/runtime/rt.jar.java.util.concurrent.atomic.js',
-	'/lt/runtime/rt.jar.java.util.concurrent.js',
-	'/lt/runtime/rt.jar.java.util.concurrent.locks.js',
-	'/lt/runtime/rt.jar.java.util.function.js',
-	'/lt/runtime/rt.jar.java.util.js',
-	'/lt/runtime/rt.jar.java.util.logging.js',
-	'/lt/runtime/rt.jar.java.util.spi.js',
-	'/lt/runtime/rt.jar.java.util.stream.js',
-	'/lt/runtime/rt.jar.javax.js',
-	'/lt/runtime/rt.jar.javax.swing.border.js',
-	'/lt/runtime/rt.jar.javax.swing.event.js',
-	'/lt/runtime/rt.jar.javax.swing.filechooser.js',
-	'/lt/runtime/rt.jar.javax.swing.js',
-	'/lt/runtime/rt.jar.javax.swing.plaf.basic.js',
-	'/lt/runtime/rt.jar.javax.swing.plaf.js',
-	'/lt/runtime/rt.jar.javax.swing.plaf.metal.js',
-	'/lt/runtime/rt.jar.javax.swing.table.js',
-	'/lt/runtime/rt.jar.javax.swing.text.html.js',
-	'/lt/runtime/rt.jar.javax.swing.text.html.parser.js',
-	'/lt/runtime/rt.jar.javax.swing.text.js',
-	'/lt/runtime/rt.jar.javax.swing.undo.js',
-	'/lt/runtime/rt.jar.jdk.internal.org.js',
-	'/lt/runtime/rt.jar.js',
-	'/lt/runtime/rt.jar.sun.awt.datatransfer.js',
-	'/lt/runtime/rt.jar.sun.awt.dnd.js',
-	'/lt/runtime/rt.jar.sun.awt.event.js',
-	'/lt/runtime/rt.jar.sun.awt.im.js',
-	'/lt/runtime/rt.jar.sun.awt.image.js',
-	'/lt/runtime/rt.jar.sun.awt.js',
-	'/lt/runtime/rt.jar.sun.awt.resources.js',
-	'/lt/runtime/rt.jar.sun.awt.shell.js',
-	'/lt/runtime/rt.jar.sun.awt.util.js',
-	'/lt/runtime/rt.jar.sun.font.js',
-	'/lt/runtime/rt.jar.sun.java2d.js',
-	'/lt/runtime/rt.jar.sun.java2d.loops.js',
-	'/lt/runtime/rt.jar.sun.java2d.pipe.js',
-	'/lt/runtime/rt.jar.sun.js',
-	'/lt/runtime/rt.jar.sun.misc.js',
-	'/lt/runtime/rt.jar.sun.net.js',
-	'/lt/runtime/rt.jar.sun.net.www.js',
-	'/lt/runtime/rt.jar.sun.nio.ch.js',
-	'/lt/runtime/rt.jar.sun.nio.fs.js',
-	'/lt/runtime/rt.jar.sun.nio.js',
-	'/lt/runtime/rt.jar.sun.reflect.js',
-	'/lt/runtime/rt.jar.sun.swing.js',
-	'/lt/runtime/rt.jar.sun.text.js',
-	'/lt/runtime/rt.jar.sun.util.js',
-	'/lt/runtime/rt.jar.sun.util.locale.js',
-	'/app/resources/jflap-7.0.jar',
-];
+  var surface = document.getElementById('surface')
+  cheerpjCreateDisplay(-1, -1, surface)
 
-// Init the cheerpj system.
-
-cheerpjInit({
-	disableErrorReporting: true,
-	preloadResources: preloaders,
-});
-
-// This will append the cheerpj surface to the canvas in the
-// page.
-
-var surface = document.getElementById("surface");
-cheerpjCreateDisplay(-1, -1, surface);
-cheerpjRunMain("JFLAP", "/app/resources/jflap-7.0.jar");
+  await cheerpjRunJar('/app/resources/jflap-7.0.jar')
+})()
 
 // Removing the javascript-disabled alert.
 
-alert = document.getElementById("javascript-disabled");
-alert.parentNode.removeChild(alert);
+alert = document.getElementById('javascript-disabled')
+alert.parentNode.removeChild(alert)
